@@ -1,0 +1,134 @@
+@charset "utf-8"; /*SEMPRE começar o CSS com esta linha*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 1.3em;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3fcfc;
+    background-image: url(UsafBG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-header{
+    padding: 2em;
+    display: flex; /*permite o conteúdo de forma mais fexível, não necesariamente em colunas empilhadas*/
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    text-align:justify;
+    margin-left: 8em;
+    margin-right: 8em;
+
+}
+
+.main-header h1{
+    font-size: 3em;
+    margin-bottom: 0.3em;
+    line-height: 1.7em;
+}
+
+.main-header h1 span{
+    color: #1d3d69;
+}
+
+.main-header p{
+    font-size: 1em;
+}
+
+.main-header img{
+    width: 200px;
+    float:left;
+    
+}
+
+/*Essa mudança de ".main-header", ".main-header h1" e ".main-header h1 span" é respeitar a hierarquia dos elementos que estão no HTML. */
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+    overflow: auto;
+    padding: 0 2em;
+}
+
+img{
+    width: 100%;
+}
+
+.card{
+    display: grid; /*coloca o conteúdo em grade*/
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em; 
+    margin-bottom: 2em;
+    background-color:rgb(235, 255, 255)
+}
+
+.card h3{
+    margin-bottom: 2em;
+}
+
+.card img{
+    height: 300px;
+}
+
+.card:nth-child(even) img{
+    order:2
+}
+
+a{
+    color: #b30000;
+    text-decoration: none;
+}
+
+.btn{
+    display: inline-block;
+    background: #000000;
+    color: #5d6dff;
+    padding: 0.8em 1.8em;
+    margin-top: 2em;
+    cursor:default;
+}
+
+.btn:hover{ 
+    opacity: 0.7; 
+} /*serve para criar uma interação com o botão*/
+
+.card div{
+    padding: 0.5em;
+}
+
+.galeria{
+    margin: 2em;
+    display: flex;
+    height: 20em;
+    gap: 1em;
+}
+
+.galeria div{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: 100%; */
+    flex: 1 ;
+    transition: all 9s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.galeria div:hover{
+    flex: 5;
+}
+
+.galeria:hover div:not(:hover){
+    filter: grayscale(1) blur(1px);
+}
+
+footer{
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 100px;
+    margin-bottom: 10px;
+}
